@@ -1,6 +1,6 @@
 import {Image, StyleSheet, Text, TouchableOpacity, View} from "react-native";
 import {AntDesign, MaterialIcons} from "@expo/vector-icons";
-const BookCard = ({title,price,authorName,imageUri}) =>{
+const BookCard = ({title,price,authorName,imageUri,onDeleteItem,onEditItem}) =>{
     return (
         <View style={styles.container}>
 
@@ -13,10 +13,10 @@ const BookCard = ({title,price,authorName,imageUri}) =>{
 
             <View style={styles.delEditContainer}>
                 <TouchableOpacity style={styles.circleButton}>
-                    <MaterialIcons name="delete-outline" size={30} color="#ff0000"/>
+                    <MaterialIcons name="delete-outline" size={30} color="#ff0000" onPress={onDeleteItem}/>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.circleButton}>
-                    <AntDesign name="edit" size={30} color="#ff0000"/>
+                    <AntDesign name="edit" size={30} color="#ff0000" onPress={onEditItem}/>
                 </TouchableOpacity>
             </View>
         </View>
